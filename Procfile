@@ -1,0 +1,1 @@
+web: gunicorn rockpaperscissors.wsgi --log-file -
