@@ -11,24 +11,30 @@ def result(request):
     # print(choosen)
     comp = random.choices(["R", "P", "S"])
     device = comp[0]
-    print(device)
+    #print(device)
     
     if device == choosen:
-        params['result'] = "THIS GAME IS TIED." 
-    if device == 'R':
-        if choosen == 'P':
-            params['result'] = "THIS GAME IS WON BY YOU."
+        params['result'] = "THIS GAME IS TIED 🤝." 
+    elif device == 'R':
+        if device == choosen:
+            params['result'] = "THIS GAME IS TIED 🤝."
+        elif choosen == 'P':
+            params['result'] = "THIS GAME IS WON BY YOU 😎."
         else:
-            params['result'] = "THIS GAME IS WON BY COMPUTER."
-    if device == 'S':
-        if choosen == 'P':
-            params['result'] = "THIS GAME IS WON BY COMPUTER."
+            params['result'] = "THIS GAME IS WON BY COMPUTER 💻🖥."
+    elif device == 'S':
+        if device == choosen:
+            params['result'] = "THIS GAME IS TIED 🤝."
+        elif choosen == 'P':
+            params['result'] = "THIS GAME IS WON BY COMPUTER 💻🖥."
         else:
-            params['result'] = "THIS GAME IS WON BY YOU."
-    if device == 'P':
-        if choosen == "S":
-            params['result'] = "THIS GAME IS WON BY YOU."
+            params['result'] = "THIS GAME IS WON BY YOU 😎."
+    elif device == 'P':
+        if device == choosen:
+            params['result'] = "THIS GAME IS TIED 🤝."
+        elif choosen == "S":
+            params['result'] = "THIS GAME IS WON BY YOU 😎."
         else:
-            params['result'] = "THIS GAME IS WON BY COMPUTER."
+            params['result'] = "THIS GAME IS WON BY COMPUTER 💻🖥."
             
     return render(request, 'result.html', params)
