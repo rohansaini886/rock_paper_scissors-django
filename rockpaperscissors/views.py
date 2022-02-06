@@ -14,8 +14,10 @@ def result(request):
     #print(device)
     
     if device == choosen:
+        params['device'] = 'SAME AS YOU'
         params['result'] = "THIS GAME IS TIED 🤝." 
     elif device == 'R':
+        params['device'] = 'ROCK'
         if device == choosen:
             params['result'] = "THIS GAME IS TIED 🤝."
         elif choosen == 'P':
@@ -23,6 +25,7 @@ def result(request):
         else:
             params['result'] = "THIS GAME IS WON BY COMPUTER 💻🖥."
     elif device == 'S':
+        params['device'] = 'STONE'
         if device == choosen:
             params['result'] = "THIS GAME IS TIED 🤝."
         elif choosen == 'P':
@@ -30,6 +33,7 @@ def result(request):
         else:
             params['result'] = "THIS GAME IS WON BY YOU 😎."
     elif device == 'P':
+        params['device'] = 'PAPER'
         if device == choosen:
             params['result'] = "THIS GAME IS TIED 🤝."
         elif choosen == "S":
